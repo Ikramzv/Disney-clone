@@ -59,6 +59,7 @@ const Wrap = styled.div`
         right: 0; left: 0;
         bottom: 0;
         background: url('/images/slider-badag.jpg');
+        object-fit: cover;
         opacity: 0;
         transition: 500ms opacity;
     }

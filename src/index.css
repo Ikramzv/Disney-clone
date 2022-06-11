@@ -3,7 +3,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: #040714;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 a {

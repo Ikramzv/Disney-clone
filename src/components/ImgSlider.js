@@ -40,14 +40,12 @@ export default ImgSlider;
 const Carousel = styled(Slider)`
     padding-top: 20px;
 
-    ul li button {
-        :before {
-            font-size: 10px;
-            color: rgb(150,158,171);
-        }
+    ul li button:before {
+        font-size: 10px;
+        color: rgb(150,158,171);
     }
 
-    li.slick-active button::before {
+    ul li.slick-active button::before {
         color: white;
     }
 
