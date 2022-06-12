@@ -4,13 +4,13 @@ import Header from './components/Header';
 import Home from './components/Home';
 import {
   BrowserRouter as Router,
-  Link,
   Routes ,
   Route
 } from 'react-router-dom'
 
 
 import Detail from './components/Detail';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -19,7 +19,9 @@ function App() {
         <Header />
 
         <Routes>
-            <Route path='/' element={<Home />}></Route>
+            <Route path='/login' element={<Login />} ></Route>
+
+            <Route path='/' element={<Home key={'home-page'} />}></Route>
             
             <Route path='/detail' element={<Detail />}></Route>
         </Routes>

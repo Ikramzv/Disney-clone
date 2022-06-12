@@ -45,7 +45,7 @@ export default Detail;
 const Container = styled.div`
     margin-top: 70px;
     min-height: calc(100vh - 70px);
-    padding: 0 calc(3.5vw + 5px);
+    padding: 20px 4%;
     color: white;
 `
 
@@ -72,8 +72,7 @@ const ImageTitle = styled.div`
     width: 35vw;
     min-height: 170px;
     height: 30vh;
-    position: relative;
-    top: 50px;
+    margin-top: 20px;
     overflow: hidden;
     border-radius: 70px;
     box-shadow: 0 46px 40px -10px black ;
@@ -89,10 +88,9 @@ const ImageTitle = styled.div`
 
 const Controls = styled.div`
 
-    position: relative;
-    top: 110px;
     display: flex;
     align-items: center;
+    margin-top: 30px;
 
     * {
         
@@ -147,10 +145,20 @@ const AddButton = styled.button`
     background-color: rgba(0,0,0,0.6);
     cursor: pointer;
     margin-right: 16px;
+    transition: 300ms ease all ;
 
     span {
         font-size: 30px;
         color: white;
+    }
+
+    :hover {
+        background: rgba(249,249,249);
+        border: 2px solid black;
+
+        span {
+            color: black;
+        }
     }
 
 
@@ -159,12 +167,14 @@ const GroupWatchButton = styled(AddButton)`
 
     background-color: rgb(0,0,0);
 
+    :hover {
+        background: #000;
+    }
+
 `
 
 const SubTitle = styled.div`
-
-    position: relative;
-    top: 140px;
+    margin-top: 20px;
     background: grey;
     color: rgb(249,249,249);
     font-size: 15px;
@@ -172,9 +182,8 @@ const SubTitle = styled.div`
 `
 
 const Description = styled.div`
-    position: relative;
-    top: 156px;
-    line-height: 1.4;
+    margin-top: 16px;
+    line-height: 1.8;
     font-size: 20px;
     color: rgb(249,249,249);
 `

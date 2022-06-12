@@ -6,18 +6,33 @@ function Viewers() {
     <Container>
         <Wrap>
             <img src='/images/viewers-disney.png' alt='viewer' />
+            <video autoPlay loop muted width="100%" height="100%">
+                <source src='/videos/1564674844-disney.mp4' type='video/mp4'/>
+            </video>
         </Wrap>
         <Wrap>
             <img src='/images/viewers-marvel.png' alt='viewer' />
+            <video autoPlay loop muted width="100%" height="100%">
+                <source src='/videos/1564676115-marvel.mp4' type='video/mp4'/>
+            </video>
         </Wrap>
         <Wrap>
             <img src='/images/viewers-national.png' alt='viewer' />
+            <video autoPlay loop muted width="100%" height="100%">
+                <source src='/videos/1564676296-national-geographic.mp4' type='video/mp4'/>
+            </video>
         </Wrap>
         <Wrap>
             <img src='/images/viewers-pixar.png' alt='viewer' />
+            <video autoPlay loop muted width="100%" height="100%">
+                <source src='/videos/1564676714-pixar.mp4' type='video/mp4'/>
+            </video>
         </Wrap>
         <Wrap>
             <img src='/images/viewers-starwars.png' alt='viewer' />
+            <video autoPlay loop muted width="100%" height="100%">
+                <source src='/videos/1608229455-star-wars.mp4' type='video/mp4'/>
+            </video>
         </Wrap>
     </Container>
   )
@@ -51,25 +66,23 @@ const Wrap = styled.div`
         object-fit: cover;
     }
 
-    :after {
-        content: '';
+    video {
         position: absolute;
         z-index: -1;
         top: 0;
         right: 0; left: 0;
         bottom: 0;
-        background: url('/images/slider-badag.jpg');
-        object-fit: cover;
         opacity: 0;
-        transition: 500ms opacity;
+        transition: 800ms opacity;
     }
 
     :hover {
         border-color: rgba(249, 249, 249, 0.8);
         transform: scale(1.05);
+        box-shadow: 0 52px 60px -20px , 0 32px 20px -20px black;
     }
 
-    :hover::after {
+    :hover video {
         opacity: 1;
     }
 
