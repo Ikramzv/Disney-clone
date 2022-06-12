@@ -1,14 +1,37 @@
-import React from "react";
+import React , { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useParams } from 'react-router-dom'
+import db from '../firebase'
+import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { selectUserName } from "../features/user/userSlice";
+import { useSelector } from "react-redux";
 
 function Detail() {
+
+    const { id } = useParams()
+
+    const [movie , setMovie] = useState()
+    useEffect(() => {
+
+        getDoc(doc(collection(db , 'movies') , id)).then((data) => {
+            if(data.exists()) {
+                setMovie(data.data())
+            }else {
+                return ;
+            }
+        })
+
+    } , [])
+
     return (
         <Container>
+            {movie && 
+            <>
             <Background>
-                <img src="/images/disney-background1.webp" alt="Detail page's background" />
+                <img src={movie.backgroundImg} alt={movie.title} />
             </Background>
             <ImageTitle>
-                <img src="https://i0.wp.com/pixarpost.com/wp-content/uploads/2020/10/6ceb9-pixar-bao-logo.jpg?resize=1200%2C675&ssl=1" alt="Title image" />
+                <img src={movie.titleImg} alt="Title image" />
             </ImageTitle>
             <Controls>
                 <PlayButton>
@@ -30,12 +53,11 @@ function Detail() {
                 </GroupWatchButton>    
             </Controls>
             <SubTitle>
-                2018 7m Family , Fantasy, Kids , Animation
+                {movie.subTitle}
             </SubTitle>
             <Description>
-                A Chinese mom who's said when her grown son leaves home gets another chance at motherhood when one of her dumplings springs 
-                to life. But she finds that nothing stays cute and small forever 
-            </Description>
+                {movie.description} 
+            </Description> </> }
         </Container>
     )
 }

@@ -1,12 +1,8 @@
-import React from 'react'
+import React , { useState } from 'react'
 import styled from 'styled-components'
-import { auth } from '../firebase'
-
 
 function Login() {
-     
     
-
   return (
     <Container>
         <CTA>
