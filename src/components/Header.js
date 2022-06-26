@@ -6,19 +6,20 @@ import { useSelector } from 'react-redux'
 import { provider , auth } from '../firebase'
 import { signInWithPopup } from 'firebase/auth'
 import { useDispatch } from 'react-redux'
-import { async } from "@firebase/util";
 
 function Header() {
 
     const dispatch = useDispatch()
 
-    const userName = useSelector(selectUserName)
+    const userName = useSelector((state) => {
+        return state.user.name
+    })
     const userPhoto = useSelector(selectUserPhoto)
 
     const navigate = useNavigate()
 
     useEffect(() => {
-        auth.onAuthStateChanged(async (user) => {
+        auth.onAuthStateChanged((user) => {
             if(user) {
                 dispatch(setUserLogin({
                     name: user.displayName ,
