@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "disney-clone-ac8f0"
-  }
+    "default": "disney-clone-55347",
+    "hosting": "disney-clone-55347"
+  },
+  "targets": {}
 }

@@ -1,6 +1,6 @@
 # App hosting url
 
-https://disney-clone-ac8f0.web.app
+https://disney-clone-55347.web.app
 
 # Disney Clone
 
