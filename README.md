@@ -1,7 +1,3 @@
-# App hosting url
-
-https://disney-clone-55347.web.app
-
 # Disney Clone
 
 I have used in this project React , Redux , Firebase , Google Authentication
